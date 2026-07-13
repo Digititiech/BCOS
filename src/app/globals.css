@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: HSL(224 71% 4%);
+    --foreground: HSL(213 31% 91%);
+    --card: HSL(224 71% 4%);
+    --card-foreground: HSL(213 31% 91%);
+    --popover: HSL(224 71% 4%);
+    --popover-foreground: HSL(213 31% 91%);
+    --primary: HSL(244.5 97.9% 62.4%);
+    --primary-foreground: HSL(210 20% 98%);
+    --secondary: HSL(223 47% 11%);
+    --secondary-foreground: HSL(210 20% 98%);
+    --muted: HSL(223 47% 11%);
+    --muted-foreground: HSL(215.4 16.3% 56.9%);
+    --accent: HSL(216 12.2% 16.1%);
+    --accent-foreground: HSL(210 20% 98%);
+    --destructive: HSL(0 62.8% 30.6%);
+    --destructive-foreground: HSL(210 20% 98%);
+    --border: HSL(223 47% 11%);
+    --input: HSL(223 47% 11%);
+    --ring: HSL(244.5 97.9% 62.4%);
+    --radius: 0.75rem;
+  }
+
+  .theme-light {
+    --background: HSL(0 0% 100%);
+    --foreground: HSL(224 71.4% 4.1%);
+    --card: HSL(0 0% 100%);
+    --card-foreground: HSL(224 71.4% 4.1%);
+    --popover: HSL(0 0% 100%);
+    --popover-foreground: HSL(224 71.4% 4.1%);
+    --primary: HSL(244.5 97.9% 62.4%);
+    --primary-foreground: HSL(210 20% 98%);
+    --secondary: HSL(220 14.3% 95.9%);
+    --secondary-foreground: HSL(220.9 39.3% 11%);
+    --muted: HSL(220 14.3% 95.9%);
+    --muted-foreground: HSL(220 8.9% 46.1%);
+    --accent: HSL(220 14.3% 95.9%);
+    --accent-foreground: HSL(220.9 39.3% 11%);
+    --destructive: HSL(0 84.2% 60.2%);
+    --destructive-foreground: HSL(210 20% 98%);
+    --border: HSL(220 13% 91%);
+    --input: HSL(220 13% 91%);
+    --ring: HSL(262.1 83.3% 57.8%);
+  }
+}
+
+@theme {
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(13, 17, 28, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
